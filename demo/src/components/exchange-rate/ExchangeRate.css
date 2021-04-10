@@ -1,0 +1,11 @@
+.rate-container{
+    padding: 4px 10px;
+    width:100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+.rate-container span:not(:last-child){
+    margin-right: 5%;
+}
