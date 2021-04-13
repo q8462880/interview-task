@@ -1,7 +1,7 @@
-.plan-list-container{
+.plan-list-container {
     width: 100%;
 }
-.plan-item-container{
+.plan-item-container {
     padding: 4px 10px;
     height: 32px;
     display: flex;
@@ -10,18 +10,17 @@
     background-color: #ede9e9;
     border: 2px solid black;
 }
-.plan-list-container 
-.plan-name-tag{
+.plan-list-container .plan-name-tag {
     width: 50%;
 }
 
-.no-border-top{
-    border-top:0;
+.no-border-top {
+    border-top: 0;
 }
 
-.total-container{
-    width:100%;
+.total-container {
+    width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }

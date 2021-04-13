@@ -12,5 +12,5 @@ export const PlanBoardStatus = {
             "date": "2020-11-25T11:30:00+03:00"
         }
     },
-    Planning: [{ tast: '打麻将', price: 5, currencyType: 'USD', done: false }],
+    Planning: [{ id:'打麻将-5-USD',task: '打麻将', price: 5, currencyType: 'USD', done: false }],
 }

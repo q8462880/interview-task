@@ -1,39 +1,41 @@
-.option-container{
-    width:100%;
+.option-container {
+    width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
-.task-input{
+.task-input {
     height: 28px;
-    width:32%;
-    border:1px solid black;
+    width: 32%;
+    border: 1px solid black;
 }
 .price-input {
     height: 28px;
-    width:15%;
-    border:1px solid black;
+    width: 15%;
+    border: 1px solid black;
 }
-.curency-select{
-    border:1px solid black;
-    width:22%;
+.curency-select {
+    border: 1px solid black;
+    width: 22%;
     height: 32px;
 }
-.add-button{
+.add-button {
     background-color: #ede9e9;
     border: 0;
     height: 32px;
     width: 22%;
 }
 
-select:invalid { color: #ccc; }
+select:invalid {
+    color: #ccc;
+}
 input::-webkit-input-placeholder {
     color: #ccc;
-  }
-  input::-moz-input-placeholder {
+}
+input::-moz-input-placeholder {
     color: #ccc;
-  }
-  input::-ms-input-placeholder {
+}
+input::-ms-input-placeholder {
     color: #ccc;
-  }
+}
