@@ -1,9 +1,7 @@
-import { ForexContext } from "../../plan-board/PlanBoard";
 import "./PlanList.css";
-import React, { useContext } from "react";
+import React from "react";
 
-function PlanItem({ noBorderTop, id, item, changeStatus }) {
-    const forex = useContext(ForexContext);
+function PlanItem({ forex, noBorderTop, id, item, changeStatus }) {
     const RMB = (1 / forex[item.currencyType].value) * item.price;
     return (
         <div
@@ -25,15 +23,14 @@ function PlanItem({ noBorderTop, id, item, changeStatus }) {
                 ></input>
                 <label htmlFor={id}>{item.task}</label>
             </div>
-            <span>P{(RMB / forex.RUB.value).toFixed(4)}</span>
+            <span>P{(RMB * forex.RUB.value).toFixed(4)}</span>
             <span>￥{RMB.toFixed(4)}</span>
-            <span>${(RMB / forex.USD.value).toFixed(4)}</span>
+            <span>${(RMB * forex.USD.value).toFixed(4)}</span>
         </div>
     );
 }
 
-export default function PlanList({ type, itemList, changeStatus }) {
-    const forex = useContext(ForexContext);
+export default function PlanList({ forex, type, itemList, changeStatus }) {
     const descObj = {
         plan: { title: "计划:", total: "将要花费:" },
         complete: { title: "已完成:", total: "一共花了:" },
@@ -52,6 +49,7 @@ export default function PlanList({ type, itemList, changeStatus }) {
             {filterItemList.map((item, index) => {
                 return (
                     <PlanItem
+                        forex={forex}
                         key={`${item.task}-${item.price}-${item.currencyType}`}
                         noBorderTop={filterItemList.length > 1 && index > 0}
                         id={`${item.task}-${item.price}-${item.currencyType}`}

@@ -1,9 +1,8 @@
 import "./ExchangeRate.css";
-import React, { useContext } from "react";
-import { ForexContext } from "../../plan-board/PlanBoard";
+import React from "react";
 
-export default function ExchangeRate() {
-    const forex = useContext(ForexContext);
+
+export default function ExchangeRate({forex}) {
     return (
         <div className="rate-container">
             <span>{forex.RUB.value.toFixed(4)} ₽/￥</span>

@@ -1,6 +1,5 @@
 import "./OptionSelect.css";
-import React, { useContext, useState } from "react";
-import { ForexContext } from "../../plan-board/PlanBoard";
+import React, { useState } from "react";
 function Task({ task, setTast }) {
     return (
         <input
@@ -29,8 +28,7 @@ function Price({ price, setPrice }) {
     );
 }
 
-function CurrencySelect({ currencyType, setCurrencyType }) {
-    const forex = useContext(ForexContext);
+function CurrencySelect({ forex, currencyType, setCurrencyType }) {
     return (
         <select
             className="curency-select"
@@ -54,7 +52,7 @@ function CurrencySelect({ currencyType, setCurrencyType }) {
     );
 }
 
-export default function OptionSelect({ addPlan }) {
+export default function OptionSelect({ forex, addPlan }) {
     const [task, setTast] = useState("");
     const [price, setPrice] = useState(0);
     const [currencyType, setCurrencyType] = useState("");
@@ -63,6 +61,7 @@ export default function OptionSelect({ addPlan }) {
             <Task task={task} setTast={setTast}></Task>
             <Price price={price} setPrice={setPrice}></Price>
             <CurrencySelect
+                forex={forex}
                 currencyType={currencyType}
                 setCurrencyType={setCurrencyType}
             ></CurrencySelect>
